@@ -1,27 +1,27 @@
 from LineaTelefonica import LineaTelefonica
 class Empresa:
-    
+
     '''----------------------------------------------------------------
     # atributos
     ----------------------------------------------------------------'''
-    
+
     # Línea telefónica número 1.
-    linea1 =""
+    linea1 = "" 
     # Línea telefónica número 2.
-    linea2 =""
+    linea2 = ""
     # Línea telefónica número 3.
-    linea3 =""
-    
+    linea3 = ""
+
     '''----------------------------------------------------------------
     # Metodos
     ----------------------------------------------------------------'''
-    
+
     def __init__(self):
         self.linea1 = LineaTelefonica()
         self.linea2 = LineaTelefonica()
         self.linea3 = LineaTelefonica()
         # TODO Parte3 PuntoA: Construir linea2 y linea3.
-        
+
     # Retorna la l�nea 1.
     def darLinea1(self):
         return self.linea1
@@ -37,19 +37,22 @@ class Empresa:
         return self.linea3
         # // TODO Parte3 PuntoD: Completar el m�todo seg�n la documentaci�n dada.
 
-    '''
+    '''----------------------------------------------------------------
 	    # Retorna el n�mero total de llamadas realizadas.
 	    # @return Total de llamadas de las tres l�neas.
-	'''
+    ----------------------------------------------------------------'''
     def darTotalNumeroLlamadas(self):
-        return self.linea1.darNumeroLlamadas()+self.linea2.darNumeroLlamadas()+self.linea3.darNumeroLlamadas()
+        total= self.linea1.darNumeroLlamadas() + self.linea2.darNumeroLlamadas() + self.linea3.darNumeroLlamadas()
+        return total
         # TODO Parte3 PuntoE: Completar el m�todo seg�n la documentaci�n dada.
+
     '''
 	    # Retorna el total de minutos consumidos.
 	    # @return Total de minutos de las tres l�neas.
 	'''
     def darTotalMinutos(self):
-        return self.linea1.darNumeroMinutos()+self.linea2.darNumeroMinutos()+self.linea3.darNumeroMinutos
+        total= self.linea1.darNumeroMinutos() + self.linea2.darNumeroMinutos() + self.linea3.darNumeroMinutos()
+        return total
         # TODO Parte3 PuntoF: Completar el m�todo seg�n la documentaci�n dada.
 
     '''
@@ -57,7 +60,8 @@ class Empresa:
 	    # @return Costo total de las tres l�neas.
     '''
     def darTotalCostoLlamadas(self):
-        return self.linea1.darCostoLlamadas()+self.linea2.darCostoLlamadas()+self.linea3.darCostoLlamadas
+        total= self.linea1.darCostoLlamadas() + self.linea2.darCostoLlamadas() + self.linea3.darCostoLlamadas()
+        return total
         # TODO Parte3 PuntoG: Completar el m�todo seg�n la documentaci�n dada.
 
     '''
@@ -65,7 +69,9 @@ class Empresa:
 	    # @return Costo promedio por minuto.
     '''
     def darCostoPromedioMinuto(self):
-        promedio = LineaTelefonica(self.darCostoPromedioMinuto())
+        promedio =self.darTotalCostoLlamadas()/self.darTotalMinutos()
+        return promedio
+        
         # TODO Parte3 PuntoH: Completar el m�todo seg�n la documentaci�n dada.
 
     '''
@@ -83,6 +89,7 @@ class Empresa:
     '''
     def agregarLlamadaLocalLinea2(self, pMinutos):
         self.linea2.agregarLlamadaLocal(pMinutos)
+
         # TODO Parte3 PuntoI: Completar el m�todo seg�n la documentaci�n dada.
 
     '''
@@ -108,19 +115,17 @@ class Empresa:
         # @param pMinutos N�mero de minutos de la llamada. pMinutos > 0.
     '''
     def agregarLlamadaLargaDistanciaLinea2(self, pMinutos):
-         self.linea2.agregarLlamadaLargaDistancia(pMinutos)
+        self.linea2.agregarLlamadaLargaDistancia(pMinutos)
         # TODO Parte3 PuntoK: Completar el m�todo seg�n la documentaci�n dada.
-    
+
     '''
         # Agrega una llamada de larga distancia a la l�nea telef�nica 3. <br>
         # <b>post: </b> Se agrega la llamada a la l�nea 3.
         # @param pMinutos N�mero de minutos de la llamada. pMinutos > 0.
     '''
     def agregarLlamadaLargaDistanciaLinea3(self, pMinutos):
-        self.linea3.agregarLlamadaLargaDistancia(pMinutos)
-
         # TODO Parte3 PuntoL: Completar el m�todo seg�n la documentaci�n dada.
-
+        self.linea3.agregarLlamadaLargaDistancia(pMinutos)
     '''
         # Agrega una llamada a celular a la l�nea telef�nica 1. <br>
         # <b>post: </b> Se agrega la llamada a la l�nea 1.
@@ -136,31 +141,31 @@ class Empresa:
     '''
     def agregarLlamadaCelularLinea2(self, pMinutos):
         self.linea2.agregarLlamadaCelular(pMinutos)
-
         # TODO Parte3 PuntoM: Completar el m�todo seg�n la documentaci�n dada.
-    
+
     '''
-        # Agrega una llamada a celular a la l�nea telef�nica 3. <br>
+     # Agrega una llamada a celular a la l�nea telef�nica 3. <br>
         # <b>post: </b> Se agrega la llamada a la l�nea 3.
         # @param pMinutos N�mero de minutos de la llamada. pMinutos > 0.
     '''
     def agregarLlamadaCelularLinea3(self, pMinutos):
-         self.linea3.agregarLlamadaCelular(pMinutos)
-
+        self.linea3.agregarLlamadaCelular(pMinutos)
         #TODO Parte3 PuntoN: Completar el m�todo seg�n la documentaci�n dada.
-    
+
     '''
         # Reinicia todas las l�neas telef�nicas.
         # <b>post: </b> Se reinici� la llamada a la l�nea 1, 2 y 3. 
     '''
     def reiniciar(self):
         self.linea1.reiniciar()
+        self.linea2.reiniciar()
+        self.linea3.reiniciar()
         # // TODO Parte3 PuntoB: Completar el m�todo para reiniciar las lineas 2 y 3.
 
     '''----------------------------------------------------------------
     # Puntos de Extensi�n
     ----------------------------------------------------------------'''
-    
+
     # M�todo para la extensi�n 1.
     # @return Respuesta 1.
     def metodo1(self):
@@ -172,6 +177,6 @@ class Empresa:
         return "Respuesta 2"
     
     def aplicarDescuentoATodos(self):
-        #invocar el metodo aplicardescuento() para cada linea de la empresa
-        descuento_total= self.linea1.aplicarDescuento() + self.linea2.aplicarDescuento()+ self.linea3.aplicarDescuento()
+        #invocar el metodo aplicarDescuento() para cada linea de la empresa
+        descuento_total = self.linea1.aplicarDescuento()+ self.linea2.aplicarDescuento()+ self.linea3.aplicarDescuento()
         return descuento_total
