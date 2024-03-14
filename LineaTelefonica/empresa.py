@@ -180,3 +180,4 @@ class Empresa:
         #invocar el metodo aplicarDescuento() para cada linea de la empresa
         descuento_total = self.linea1.aplicarDescuento()+ self.linea2.aplicarDescuento()+ self.linea3.aplicarDescuento()
         return descuento_total
+
