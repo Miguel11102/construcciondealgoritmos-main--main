@@ -11,6 +11,21 @@ class LineaTelefonica:
     
     # Costo total de las llamadas
     costoLlamadas = ""
+
+    #estrato linea telefonica
+    estrato = 0
+
+    #descuento aplicable a las llamadas(valor entre 0.0 y 25.5)
+    descuento = 0.0
+
+    #cantidad de dinero disponible para gastar (prepago)
+    prepago = 0.0
+
+    #almacenar el total de segundos
+    totalSegundos = 0
+
+    #almacenar el costo de la llamada en dolares
+    CostoLLamadaDolares= 0
     
     '''----------------------------------------------------------------
     # Metodos
@@ -21,7 +36,23 @@ class LineaTelefonica:
         self.numeroLlamadas= 0
         self.numeroMinutos = 0
         self.costoLlamadas= 0
+        self.totalSegundos= 0
+        self.CostoLLamadaDolares=0
+        
         # TODO Parte2 PuntoA: Completar el método según la documentación dada.
+
+    def reiniciar(self):
+        self.numeroLlamadas= 0
+        self.numeroMinutos = 0
+        self.costoLlamadas= 0
+        self.totalSegundos= 0
+        self.CostoLLamadaDolares=0
+
+    def convertirPesosADolares(self):
+        convertido = float(self.costoLlamadas/ 3100)
+        self.CostoLLamadaDolares = convertido
+        return convertido
+        
 
     #Retorna el costo total de las llamadas realizadas.
     def darCostoLlamadas(self):
@@ -50,7 +81,7 @@ class LineaTelefonica:
     # Agrega una llamada local a la línea telefónica
     # post: Se incrementá en 1 numeroDeLlamadas, se incremento numeroDeMinutos en minutos, costoLlamadas aumentá en ( minutos * 35 ).
     # :param pMinutos Número de minutos de la llamada. pMinutos >0.
-    def agregarLlamadaLocal(self, pMinutos):
+    def agregarLlamadaLocal(self, pMinutos, ):
         
         # Una llamada más
         self.numeroLlamadas += 1
@@ -58,6 +89,9 @@ class LineaTelefonica:
         self.numeroMinutos += pMinutos
         # Suma el costo (costo por minuto: 35 pesos)
         self.costoLlamadas += pMinutos * 35
+        #aumenta el saldo disponible
+        dinerodisponible=self.darSaldoDisponible+self.agregarDineroSaldo
+        return dinerodisponible
 
     """
         Agrega una llamada de larga distancia a la línea telefónica.
@@ -83,6 +117,28 @@ class LineaTelefonica:
         self.numeroLlamadas += 1
         self.numeroMinutos += pMinutos
         self.costoLlamadas += pMinutos * 999
+    
+    def darDescuento(self):
+        return self.descuento
+
+    def aplicarDescuento(self):
+        return (self.costoLlamadas * self.descuento)/100
+
+    def darSaldoDisponible(self):
+        return self.prepago
+
+    def agregarDineroSaldo(self, valor):
+        self.prepago += valor    
+    
+
+    def motivarCliente(self):
+        if(self.darNumeroMinutos>30):
+            self.aumentarSaldo + 1000
+    
+
+
+
+
     
 
 
