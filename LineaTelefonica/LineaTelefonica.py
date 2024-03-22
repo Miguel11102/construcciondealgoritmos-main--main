@@ -2,6 +2,11 @@ class LineaTelefonica:
     '''----------------------------------------------------------------
     # atributos
     ----------------------------------------------------------------'''
+    #cantidad minutos  celular
+    cantidadMinutos = ""
+   
+    # Costo de minutos de llamadas a celular
+    costoMinutosCelular = ''
     
     # Numero de llamadas realizadas
     numeroLlamadas = ""
@@ -134,6 +139,41 @@ class LineaTelefonica:
     def motivarCliente(self):
         if(self.darNumeroMinutos>30):
             self.aumentarSaldo + 1000
+    
+    def __init__(Self):
+        Self.costoDolares = 0
+        Self.numeroLlamadas = 0 
+        Self.numeroMinutos = 0 
+        Self.costoLlamadas = 0 
+        Self.costoMinutosCelular = 0
+        Self.cantidadMinutosCelular = 0
+
+    def ConsultarCantidadMinutosCelular(self):
+
+        return self.cantidadMinutosCelular
+
+    def ConsultarCostoMinutosCelular(self):
+
+        return self.costoMinutosCelular
+    
+    def reiniciar(self):
+        self.numeroSegundos = 0
+        self.costoDolares = 0
+        self.numeroLlamadas = 0 
+        self.numeroMinutos = 0 
+        self.costoLlamadas = 0 
+        self.costoMinutosCelular = 0
+        self.cantidadMinutosCelular = 0
+    
+    def darEstrato(self):
+        return self.estrato
+    
+    def definirEstrato(self, pEstrato):
+        self.estrato - pEstrato
+
+    def darMinutosPorEstrato(self):
+        return self.numeroMinutos * self.estrato
+    
     
 
 
