@@ -20,7 +20,7 @@ class Empresa:
         self.linea1 = LineaTelefonica()
         self.linea2 = LineaTelefonica()
         self.linea3 = LineaTelefonica()
-        # TODO Parte3 PuntoA: Construir linea2 y linea3.
+    
 
     # Retorna la l�nea 1.
     def darLinea1(self):
@@ -180,4 +180,28 @@ class Empresa:
         #invocar el metodo aplicarDescuento() para cada linea de la empresa
         descuento_total = self.linea1.aplicarDescuento()+ self.linea2.aplicarDescuento()+ self.linea3.aplicarDescuento()
         return descuento_total
+
+    def mensajeLlamadasCelular(self):
+        minutosTotalLlamadaCelular= self.cantidadMinutosCelular+self.costoMinutosCelular
+        return minutosTotalLlamadaCelular
+    
+    def Bono(self):
+        bonoCelular = self.cantidadMinutosCelular+self.costoMinutosCelular*0.02
+        return bonoCelular
+    
+    def definirEstrato(self):
+        self.linea1.definirEstrato(2)
+        self.linea2.definirEstrato(5)
+        self.linea3.definirEstrato(6)
+
+    def darTotalMinutosPorEstrato(Self):
+        totalMinutosPorEstrato = 0
+        totalMinutosPorEstrato += Self.linea1.darMinutosPorEstrato()
+        totalMinutosPorEstrato += Self.linea2.darMinutosPorEstrato()
+        totalMinutosPorEstrato += Self.linea2.darMinutosPorEstrato()
+        return totalMinutosPorEstrato
+    
+    def metodo1(self):
+        totalMinutosPorEstrato = self.darTotalMinutosPorEstrato()
+        return "total=" * totalMinutosPorEstrato
 
