@@ -59,7 +59,7 @@ class producto:
         return self.__cantidadUnidadesVendidas
     
     def setNombre(self,nombre):
-        self.__nombre = nombre
+        self .__nombre = nombre
     
     def setTipo (self,tipo):
         self.__tipo = tipo
@@ -102,3 +102,23 @@ class producto:
     def SubirValorUnitario(self):
         if self.__valorUnitario< 1000:
             self.__valorUnitario +=self.__valorUnitario*0.01
+    
+    def nombreTipoProducto(self):
+        if self.__tipo == "SUPERMECADO":
+            return "El producto es de supermecado"
+        
+    def aumentarValorUnitario (self):
+        if self.__tipo == "DROGUERIA":
+            aumento = self.__valorUnitario * 0.01
+        
+        elif self.__tipo == "SUPERMERCADO":
+            aumento = self.__valorUnitario * 0.03
+
+        elif self.__tipo == "PAPELERIA":
+            aumento = self.__valorUnitario * 0.02
+
+
+
+
+
+
