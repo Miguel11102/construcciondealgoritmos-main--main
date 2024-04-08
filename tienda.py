@@ -36,8 +36,33 @@ class tienda:
     def getProducto2(self):
         return self.__producto2
     
-    def getProducto2(self):
+    def getProducto3(self):
         return self.__producto3
     
-    def getProducto2(self):
+    def getProducto4(self):
         return self.__producto4
+    
+    def darPrecioProducto(self, numeroProducto):
+        if numeroProducto == 1:
+            return self.__producto1.getValorUnitario()
+        elif numeroProducto == 2:
+            return self.__producto2.getValorUnitario
+        elif numeroProducto == 3:
+            return self.__producto3.getValorUnitario
+        elif numeroProducto == 4:
+            return self.__producto4.getValorUnitario
+        
+        else:
+            return None
+        
+    def darPrecioProducto(self, nombreProducto):
+        if nombreProducto == self.__producto1.getNombre():
+            self.__producto1.getValorUnitario()
+        elif nombreProducto == self.__producto2.getNombre():
+            self.__producto2.getValorUnitario()
+        elif nombreProducto == self.__producto3.getNombre():
+            self.__producto3.getValorUnitario()
+        elif nombreProducto == self.__producto4.getNombre():
+            self.__producto4.getValorUnitario()
+        else:
+            return None
