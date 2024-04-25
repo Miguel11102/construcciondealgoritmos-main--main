@@ -115,5 +115,19 @@ class curso:
          else:
             return -1
          
+   def notasMasRecurrente (self):
+      notaMasRecurrente = 0
+      cantidadOcurrente = 0
+      for nota in self.__notas:
+         contador=0
+         for nota2 in self.__notas:
+            if nota2 == nota:
+               contador+=1
+         
+         if contador > cantidadOcurrente:
+            notaMasRecurrente= nota
+            cantidadOcurrente=contador
+         
+      return notaMasRecurrente
 
 
